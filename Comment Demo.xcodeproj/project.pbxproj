@@ -20,6 +20,7 @@
 		B6BA2FFC22D2F07C00A2E080 /* RPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FFB22D2F07C00A2E080 /* RPRepository.swift */; };
 		B6BA2FFE22D2F1F500A2E080 /* RPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FFD22D2F1F500A2E080 /* RPAPI.swift */; };
 		B6BA300022D2F26200A2E080 /* RPAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FFF22D2F26200A2E080 /* RPAPITests.swift */; };
+		B6BA300222D2F4D500A2E080 /* RPComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA300122D2F4D500A2E080 /* RPComment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B6BA2FFB22D2F07C00A2E080 /* RPRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPRepository.swift; sourceTree = "<group>"; };
 		B6BA2FFD22D2F1F500A2E080 /* RPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPAPI.swift; sourceTree = "<group>"; };
 		B6BA2FFF22D2F26200A2E080 /* RPAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPAPITests.swift; sourceTree = "<group>"; };
+		B6BA300122D2F4D500A2E080 /* RPComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPComment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				B6BA2FD322D2ECAD00A2E080 /* AppDelegate.swift */,
 				B6BA2FD522D2ECAD00A2E080 /* ViewController.swift */,
+				B6BA300122D2F4D500A2E080 /* RPComment.swift */,
 				B6BA2FFD22D2F1F500A2E080 /* RPAPI.swift */,
 				B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */,
 				B6BA2FF722D2EEF900A2E080 /* RPCommentModel.swift */,
@@ -222,6 +225,7 @@
 				B6BA2FF822D2EEF900A2E080 /* RPCommentModel.swift in Sources */,
 				B6BA2FFC22D2F07C00A2E080 /* RPRepository.swift in Sources */,
 				B6BA2FF622D2EE2C00A2E080 /* RPLocalDB.swift in Sources */,
+				B6BA300222D2F4D500A2E080 /* RPComment.swift in Sources */,
 				B6BA2FFE22D2F1F500A2E080 /* RPAPI.swift in Sources */,
 				B6BA2FD422D2ECAD00A2E080 /* AppDelegate.swift in Sources */,
 			);
