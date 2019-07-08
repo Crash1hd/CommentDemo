@@ -16,6 +16,8 @@
 		B6BA2FF422D2EDD300A2E080 /* RPLocalDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */; };
 		B6BA2FF622D2EE2C00A2E080 /* RPLocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */; };
 		B6BA2FF822D2EEF900A2E080 /* RPCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF722D2EEF900A2E080 /* RPCommentModel.swift */; };
+		B6BA2FFA22D2F04100A2E080 /* RPRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF922D2F04100A2E080 /* RPRepositoryTests.swift */; };
+		B6BA2FFC22D2F07C00A2E080 /* RPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FFB22D2F07C00A2E080 /* RPRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLocalDBTests.swift; sourceTree = "<group>"; };
 		B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLocalDB.swift; sourceTree = "<group>"; };
 		B6BA2FF722D2EEF900A2E080 /* RPCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCommentModel.swift; sourceTree = "<group>"; };
+		B6BA2FF922D2F04100A2E080 /* RPRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPRepositoryTests.swift; sourceTree = "<group>"; };
+		B6BA2FFB22D2F07C00A2E080 /* RPRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				B6BA2FD522D2ECAD00A2E080 /* ViewController.swift */,
 				B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */,
 				B6BA2FF722D2EEF900A2E080 /* RPCommentModel.swift */,
+				B6BA2FFB22D2F07C00A2E080 /* RPRepository.swift */,
 				B6BA2FD722D2ECAD00A2E080 /* Main.storyboard */,
 				B6BA2FDA22D2ECAE00A2E080 /* Assets.xcassets */,
 				B6BA2FDC22D2ECAE00A2E080 /* LaunchScreen.storyboard */,
@@ -100,6 +105,7 @@
 			children = (
 				B6BA2FE822D2ECAE00A2E080 /* Comment_DemoTests.swift */,
 				B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */,
+				B6BA2FF922D2F04100A2E080 /* RPRepositoryTests.swift */,
 				B6BA2FEA22D2ECAE00A2E080 /* Info.plist */,
 			);
 			path = "Comment DemoTests";
@@ -208,6 +214,7 @@
 			files = (
 				B6BA2FD622D2ECAD00A2E080 /* ViewController.swift in Sources */,
 				B6BA2FF822D2EEF900A2E080 /* RPCommentModel.swift in Sources */,
+				B6BA2FFC22D2F07C00A2E080 /* RPRepository.swift in Sources */,
 				B6BA2FF622D2EE2C00A2E080 /* RPLocalDB.swift in Sources */,
 				B6BA2FD422D2ECAD00A2E080 /* AppDelegate.swift in Sources */,
 			);
@@ -217,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BA2FFA22D2F04100A2E080 /* RPRepositoryTests.swift in Sources */,
 				B6BA2FE922D2ECAE00A2E080 /* Comment_DemoTests.swift in Sources */,
 				B6BA2FF422D2EDD300A2E080 /* RPLocalDBTests.swift in Sources */,
 			);
