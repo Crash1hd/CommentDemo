@@ -8,11 +8,25 @@
 
 import Foundation
 
-class RPComment {
+protocol RPCommentProtocol {
+	func save(comment: RPCommentModel) -> Bool
+	func getAllComments() -> Array<RPCommentModel>
+}
+
+class RPComment: RPCommentProtocol {
+
 	var comment: RPCommentModel
 
 	init(comment: String) {
 		self.comment = RPCommentModel(comment: comment)
+	}
+
+	func save(comment: RPCommentModel) -> Bool {
+		return RPRepository().save(commentModel: comment)
+	}
+
+	func getAllComments() -> Array<RPCommentModel> {
+		return RPRepository().getAllComments()
 	}
 
 }

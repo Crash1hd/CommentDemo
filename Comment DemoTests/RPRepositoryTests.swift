@@ -26,14 +26,14 @@ class RPRepositoryTests: XCTestCase {
 	}
 
 	func testDoesRepoSave() {
-		let rpRepo = mockRPRepo()
+		let rpRepo = MockRPRepo()
 		let commentModel = RPCommentModel(comment: "Test")
 
 		XCTAssert(rpRepo.save(commentModel: commentModel))
 	}
 
 	func testDoesRepoReturnArrayCommentModel() {
-		let rpRepo = mockRPRepo()
+		let rpRepo = MockRPRepo()
 		let commentModel = RPCommentModel(comment: "Test")
 
 		XCTAssertEqual([commentModel], rpRepo.getAllComments())
@@ -41,7 +41,7 @@ class RPRepositoryTests: XCTestCase {
 
 }
 
-class mockRPRepo: RPRepoProtocol  {
+class MockRPRepo: RPRepoProtocol  {
 
 	func save(commentModel: RPCommentModel) -> Bool {
 		return true

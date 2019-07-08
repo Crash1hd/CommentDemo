@@ -40,4 +40,30 @@ class RPCommentTests: XCTestCase {
 		XCTAssertEqual(test, RPComment(comment: "Test").comment)
 	}
 
+	func testDoesCommentSave() {
+		let rpComment = RPComment(comment: "Test")
+
+		XCTAssert(rpComment.save(comment: rpComment.comment))
+	}
+
+	func testDoesGetAllCommentsReturnRPCommentArray() {
+
+		let mockRPComment = MockRPComment()
+		let commentModel = RPCommentModel(comment: "Test")
+
+		XCTAssertEqual([commentModel], mockRPComment.getAllComments())
+	}
+}
+
+class MockRPComment: RPCommentProtocol {
+
+	func save(comment: RPCommentModel) -> Bool {
+		return true
+	}
+
+	func getAllComments() -> Array<RPCommentModel> {
+		let commentModel = RPCommentModel(comment: "Test")
+		return [commentModel]
+	}
+
 }
