@@ -11,6 +11,7 @@ import Foundation
 protocol RPRepoProtocol {
 	func save(commentModel: RPCommentModel) -> Bool
 	func getAllComments() -> Array<RPCommentModel>
+	func deleteComment(at index: Int) -> Int
 }
 
 class RPRepository: RPRepoProtocol {
@@ -32,6 +33,13 @@ class RPRepository: RPRepoProtocol {
 		_ = RPAPI().getAllComments()
 
 		return RPLocalDB().getAllComments()
+	}
+
+	func deleteComment(at index: Int) -> Int {
+		_ = RPLocalDB().delete(at: index)
+		_ = RPAPI().delete(at: index)
+
+		return 0
 	}
 
 	init() {}

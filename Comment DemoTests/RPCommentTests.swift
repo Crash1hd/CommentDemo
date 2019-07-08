@@ -56,6 +56,10 @@ class RPCommentTests: XCTestCase {
 }
 
 class MockRPComment: RPCommentProtocol {
+	func deleteComment(at index: Int) {
+		
+	}
+
 
 	func save(comment: RPCommentModel) -> Bool {
 		return true

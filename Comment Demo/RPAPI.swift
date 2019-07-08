@@ -11,6 +11,7 @@ import Foundation
 protocol RPAPIProtocol {
 	func getAllComments() -> Array<RPCommentModel>
 	func save(comment: RPCommentModel)
+	func delete(at index: Int)
 }
 
 class RPAPI: RPAPIProtocol {
@@ -27,6 +28,10 @@ class RPAPI: RPAPIProtocol {
 	func save(comment: RPCommentModel) {
 		//TODO: Networking call to some remote service
 		
+	}
+
+	func delete(at index: Int) {
+		//TODO: Networking call to delete comment from remote service
 	}
 
 }

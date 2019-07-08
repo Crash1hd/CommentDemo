@@ -13,11 +13,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	private var myArray: Array<RPCommentModel> = []
 	private var myTableView: UITableView!
 	private let myTableViewCellID = "MyTableViewCellID"
+	private let rpComment = RPComment(comment: "")
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		let rpComment = RPComment(comment: "")
 
 		myArray = rpComment.getAllComments()
 
@@ -48,6 +47,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 		return cell
 	}
+
+	internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+		if editingStyle == .delete {
+			self.myArray.remove(at: indexPath.row)
+			rpComment.deleteComment(at: indexPath.row)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		}
+
+	}
+
 }
 
 

@@ -39,6 +39,17 @@ class RPRepositoryTests: XCTestCase {
 		XCTAssertEqual([commentModel], rpRepo.getAllComments())
 	}
 
+	//This is a fake test as where not actually testing the repo
+	func testDoesRepoDeleteComment() {
+		let rpRepo = MockRPRepo()
+
+		_ = rpRepo.deleteComment(at: 0)
+
+		print(rpRepo.getAllComments())
+
+		XCTAssertEqual(rpRepo.getAllComments().count, 1)
+	}
+
 }
 
 class MockRPRepo: RPRepoProtocol  {
@@ -49,7 +60,12 @@ class MockRPRepo: RPRepoProtocol  {
 
 	func getAllComments() -> Array<RPCommentModel> {
 		let commentModel = RPCommentModel(comment: "Test")
+
 		return [commentModel]
+	}
+
+	func deleteComment(at index: Int) -> Int {
+		return 1
 	}
 
 }
