@@ -64,9 +64,26 @@ class RPLocalDBTests: XCTestCase {
 
 		_ = tempRPLocalDB.delete(at: 2, defaults: mockUserDefaults)
 
-		let allSaveComments = tempRPLocalDB.getAllComments(defaults: mockUserDefaults)
+		let allSavedComments = tempRPLocalDB.getAllComments(defaults: mockUserDefaults)
 
-		XCTAssertEqual(allSaveComments.count, 3)
+		XCTAssertEqual(allSavedComments.count, 3)
+	}
+
+	func testEditComment() {
+		let rpCommentModel = RPCommentModel(comment: "Test")
+
+		let tempRPLocalDB = RPLocalDB()
+		let mockUserDefaults = MockUserDefaults()
+
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+
+		_ = tempRPLocalDB.edit(at: 2, text: "Test2", defaults: mockUserDefaults)
+
+		let allSavedComments = tempRPLocalDB.getAllComments(defaults: mockUserDefaults)
+
+		XCTAssertEqual(allSavedComments[2].comment, "Test2")
 	}
 }
 

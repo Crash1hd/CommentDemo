@@ -12,6 +12,7 @@ protocol RPLocalDBProtocol {
 	func getAllComments(defaults: UserDefaults) -> Array<RPCommentModel>
 	func save(comment: RPCommentModel, defaults: UserDefaults)
 	func delete(at index: Int, defaults: UserDefaults)
+	func edit(at index: Int, text: String, defaults: UserDefaults)
 }
 
 class RPLocalDB: RPLocalDBProtocol {
@@ -51,4 +52,17 @@ class RPLocalDB: RPLocalDBProtocol {
 			print("Error while encoding user data")
 		}
 	}
+
+	func edit(at index: Int, text: String, defaults: UserDefaults = UserDefaults.standard) {
+		var currentComments = getAllComments(defaults: defaults)
+		currentComments[index] = RPCommentModel(comment: text)
+
+		do {
+			let data = try JSONEncoder().encode(currentComments)
+			defaults.set(data, forKey: "currentComments")
+		} catch {
+			print("Error while encoding user data")
+		}
+	}
+
 }

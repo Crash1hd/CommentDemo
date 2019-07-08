@@ -12,6 +12,7 @@ protocol RPCommentProtocol {
 	func save(comment: RPCommentModel) -> Bool
 	func getAllComments() -> Array<RPCommentModel>
 	func deleteComment(at index: Int)
+	func edit(at index: Int, text: String)
 }
 
 class RPComment: RPCommentProtocol {
@@ -33,5 +34,10 @@ class RPComment: RPCommentProtocol {
 	func deleteComment(at index: Int) {
 		_ = RPRepository().deleteComment(at: index)
 	}
+
+	func edit(at index: Int, text: String) {
+		_ = RPRepository().edit(at: index, text: text)
+	}
+
 
 }

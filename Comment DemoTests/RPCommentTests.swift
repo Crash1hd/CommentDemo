@@ -56,10 +56,6 @@ class RPCommentTests: XCTestCase {
 }
 
 class MockRPComment: RPCommentProtocol {
-	func deleteComment(at index: Int) {
-		
-	}
-
 
 	func save(comment: RPCommentModel) -> Bool {
 		return true
@@ -68,6 +64,14 @@ class MockRPComment: RPCommentProtocol {
 	func getAllComments() -> Array<RPCommentModel> {
 		let commentModel = RPCommentModel(comment: "Test")
 		return [commentModel]
+	}
+
+	func edit(at index: Int, text: String) {
+		//TODO: Add in test
+	}
+
+	func deleteComment(at index: Int) {
+		//TODO: Add in test
 	}
 
 }

@@ -12,6 +12,7 @@ protocol RPRepoProtocol {
 	func save(commentModel: RPCommentModel) -> Bool
 	func getAllComments() -> Array<RPCommentModel>
 	func deleteComment(at index: Int) -> Int
+	func edit(at index: Int, text: String)
 }
 
 class RPRepository: RPRepoProtocol {
@@ -40,6 +41,10 @@ class RPRepository: RPRepoProtocol {
 		_ = RPAPI().delete(at: index)
 
 		return 0
+	}
+
+	func edit(at index: Int, text: String) {
+		_ = RPLocalDB().edit(at: index, text: text)
 	}
 
 	init() {}

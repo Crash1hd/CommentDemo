@@ -8,10 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
 	private var myArray: Array<RPCommentModel> = []
-	private var myTableView: UITableView!
+
+	@IBOutlet weak var myTextView: UITextField!
+	@IBOutlet weak var myButton: UIButton!
+	@IBOutlet weak var myTableView: UITableView!
+
+	private var index: IndexPath = []
+
 	private let myTableViewCellID = "MyTableViewCellID"
 	private let rpComment = RPComment(comment: "")
 
@@ -20,21 +26,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 		myArray = rpComment.getAllComments()
 
-		let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-		let displayWidth: CGFloat = self.view.frame.width
-		let displayHeight: CGFloat = self.view.frame.height
-
-		myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
 		myTableView.register(UITableViewCell.self, forCellReuseIdentifier: myTableViewCellID)
 		myTableView.dataSource = self
 		myTableView.delegate = self
-
-		self.view.addSubview(myTableView)
 	}
+}
+
+//Table View Related
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		index = indexPath
 		print("Num: \(indexPath.row)")
 		print("Value: \(myArray[indexPath.row])")
+		myTextView.text = myArray[indexPath.row].comment
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,4 +66,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 }
 
+//Button Related
+extension ViewController {
 
+	@IBAction func myButtonClicked(_ sender: Any) {
+		guard let text = myTextView.text else {
+			print("Failure")
+			return
+		}
+
+		if index.count > 0 {
+			if let cell = myTableView.cellForRow(at: index) {
+				cell.textLabel?.text = text
+				_ = rpComment.edit(at: index.row, text: text)
+
+				myArray = rpComment.getAllComments()
+
+				index = []
+
+				return
+			}
+		}
+
+		_ = rpComment.save(comment: RPCommentModel(comment: text))
+
+		myArray = rpComment.getAllComments()
+
+		self.myTableView.reloadData()
+
+	}
+}
