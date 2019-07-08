@@ -37,6 +37,19 @@ class RPLocalDBTests: XCTestCase {
 		XCTAssertEqual(allSavedComments.count, 1)
 	}
 
+	func testSaveAndGetMultipleComments() {
+		let rpCommentModel = RPCommentModel(comment: "Test")
+
+		let tempRPLocalDB = RPLocalDB()
+		let mockUserDefaults = MockUserDefaults()
+
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+
+		let allSavedComments = tempRPLocalDB.getAllComments(defaults: mockUserDefaults)
+		XCTAssertEqual(allSavedComments.count, 3)
+	}
 }
 
 class MockUserDefaults : UserDefaults {
