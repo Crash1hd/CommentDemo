@@ -16,11 +16,20 @@ protocol RPRepoProtocol {
 class RPRepository: RPRepoProtocol {
 
 	func save(commentModel: RPCommentModel) -> Bool {
+		if !commentModel.comment.isEmpty {
+			_ = RPLocalDB().save(comment: commentModel)
+
+			return true
+		}
+
+		print("No comment to save")
+
 		return false
 	}
 
 	func getAllComments() -> Array<RPCommentModel> {
-		return []
+
+		return RPLocalDB().getAllComments()
 	}
 
 	init() {}
