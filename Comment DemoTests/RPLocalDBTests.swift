@@ -25,6 +25,18 @@ class RPLocalDBTests: XCTestCase {
 		XCTAssertNotNil(RPLocalDB())
 	}
 
+	func testSaveAndGetSingleComment() {
+		let rpCommentModel = RPCommentModel(comment: "Test")
+
+		let tempRPLocalDB = RPLocalDB()
+		let mockUserDefaults = MockUserDefaults()
+
+		_ = tempRPLocalDB.save(comment: rpCommentModel, defaults: mockUserDefaults)
+
+		let allSavedComments = tempRPLocalDB.getAllComments(defaults: mockUserDefaults)
+		XCTAssertEqual(allSavedComments.count, 1)
+	}
+
 }
 
 class MockUserDefaults : UserDefaults {

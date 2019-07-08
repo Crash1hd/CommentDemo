@@ -8,9 +8,35 @@
 
 import Foundation
 
+protocol RPLocalDBProtocol {
+	func getAllComments(defaults: UserDefaults) -> Array<RPCommentModel>
+	func save(comment: RPCommentModel, defaults: UserDefaults)
+}
 
-class RPLocalDB {
+class RPLocalDB: RPLocalDBProtocol {
 
+	func save(comment: RPCommentModel, defaults: UserDefaults = UserDefaults.standard) {
+		var currentComments = getAllComments(defaults: defaults)
+		currentComments.append(comment)
 
+		do {
+			let data = try JSONEncoder().encode(currentComments)
+			defaults.set(data, forKey: "currentComments")
+		} catch {
+			print("Error while encoding user data")
+		}
+	}
+
+	func getAllComments(defaults: UserDefaults = UserDefaults.standard) -> Array<RPCommentModel> {
+		if let data = defaults.object(forKey: "currentComments") as? Data {
+			do {
+				let u = try JSONDecoder().decode([RPCommentModel].self, from: data) as [RPCommentModel]
+				return u
+			} catch {
+				print("Error while decoding user data")
+			}
+		}
+		return []
+	}
 
 }
