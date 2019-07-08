@@ -12,7 +12,7 @@
 		B6BA2FD922D2ECAD00A2E080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA2FD722D2ECAD00A2E080 /* Main.storyboard */; };
 		B6BA2FDB22D2ECAE00A2E080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BA2FDA22D2ECAE00A2E080 /* Assets.xcassets */; };
 		B6BA2FDE22D2ECAE00A2E080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA2FDC22D2ECAE00A2E080 /* LaunchScreen.storyboard */; };
-		B6BA2FE922D2ECAE00A2E080 /* Comment_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FE822D2ECAE00A2E080 /* Comment_DemoTests.swift */; };
+		B6BA2FE922D2ECAE00A2E080 /* RPCommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FE822D2ECAE00A2E080 /* RPCommentTests.swift */; };
 		B6BA2FF422D2EDD300A2E080 /* RPLocalDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */; };
 		B6BA2FF622D2EE2C00A2E080 /* RPLocalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */; };
 		B6BA2FF822D2EEF900A2E080 /* RPCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA2FF722D2EEF900A2E080 /* RPCommentModel.swift */; };
@@ -41,7 +41,7 @@
 		B6BA2FDD22D2ECAE00A2E080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6BA2FDF22D2ECAE00A2E080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BA2FE422D2ECAE00A2E080 /* Comment DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comment DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6BA2FE822D2ECAE00A2E080 /* Comment_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment_DemoTests.swift; sourceTree = "<group>"; };
+		B6BA2FE822D2ECAE00A2E080 /* RPCommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCommentTests.swift; sourceTree = "<group>"; };
 		B6BA2FEA22D2ECAE00A2E080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLocalDBTests.swift; sourceTree = "<group>"; };
 		B6BA2FF522D2EE2C00A2E080 /* RPLocalDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLocalDB.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		B6BA2FE722D2ECAE00A2E080 /* Comment DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6BA2FE822D2ECAE00A2E080 /* Comment_DemoTests.swift */,
+				B6BA2FE822D2ECAE00A2E080 /* RPCommentTests.swift */,
 				B6BA2FF322D2EDD300A2E080 /* RPLocalDBTests.swift */,
 				B6BA2FF922D2F04100A2E080 /* RPRepositoryTests.swift */,
 				B6BA2FFF22D2F26200A2E080 /* RPAPITests.swift */,
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6BA2FFA22D2F04100A2E080 /* RPRepositoryTests.swift in Sources */,
-				B6BA2FE922D2ECAE00A2E080 /* Comment_DemoTests.swift in Sources */,
+				B6BA2FE922D2ECAE00A2E080 /* RPCommentTests.swift in Sources */,
 				B6BA300022D2F26200A2E080 /* RPAPITests.swift in Sources */,
 				B6BA2FF422D2EDD300A2E080 /* RPLocalDBTests.swift in Sources */,
 			);
