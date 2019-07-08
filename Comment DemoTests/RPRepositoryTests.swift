@@ -25,4 +25,23 @@ class RPRepositoryTests: XCTestCase {
 		XCTAssertNotNil(RPRepository())
 	}
 
+	func testDoesRepoSave() {
+		let rpRepo = mockRPRepo()
+		let commentModel = RPCommentModel(comment: "Test")
+
+		XCTAssert(rpRepo.save(commentModel: commentModel))
+	}
+
+}
+
+class mockRPRepo: RPRepoProtocol  {
+
+	func save(commentModel: RPCommentModel) -> Bool {
+		return true
+	}
+
+	func getAllComments() -> Array<RPCommentModel> {
+		return []
+	}
+
 }
