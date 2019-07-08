@@ -18,6 +18,7 @@ class RPRepository: RPRepoProtocol {
 	func save(commentModel: RPCommentModel) -> Bool {
 		if !commentModel.comment.isEmpty {
 			_ = RPLocalDB().save(comment: commentModel)
+			_ = RPAPI().save(comment: commentModel)
 
 			return true
 		}
@@ -28,6 +29,7 @@ class RPRepository: RPRepoProtocol {
 	}
 
 	func getAllComments() -> Array<RPCommentModel> {
+		_ = RPAPI().getAllComments()
 
 		return RPLocalDB().getAllComments()
 	}

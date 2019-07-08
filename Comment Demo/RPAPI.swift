@@ -16,16 +16,16 @@ protocol RPAPIProtocol {
 class RPAPI: RPAPIProtocol {
 
 	func getAllComments() -> Array<RPCommentModel> {
-		//Networking call to some remote service
+		//TODO: Networking call to some remote service
 
-		//Update LocalDB with response from remote service
+		//TODO: Update LocalDB with response from remote service
 
 		return []
 	}
 
 
 	func save(comment: RPCommentModel) {
-		//Networking call to some remote service
+		//TODO: Networking call to some remote service
 		
 	}
 
